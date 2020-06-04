@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+.btn {
+  border: none;
+  position: relative;
+  color: #333333;
+  padding: 10px;
+  background-color: var(--background-color);
+  margin-bottom: 10px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+
+  --fade-color: #d87684;
+  --background-color: #fe546e;
+}
+
+.btn-fade-in {
+  border-radius: 0.5rem;
+}
+
+.btn-fade-in:hover {
+  background-color: var(--fade-color);
+  transition: 0.5s background-color ease-in-out;
+}
+
+.btn-fade-out {
+  background-color: var(--fade-color);
+}
+
+.btn-fade-out:hover {
+  background-color: var(--background-color);
+  transition: 0.5s background-color ease-in-out;
+}
+
+.btn-underline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: cornflowerblue;
+  transform: scaleX(0);
+  transition: 0.5s transform ease-in;
+}
+
+.btn-underline:hover::before {
+  transform: scaleX(1);
+}
+
+.btn-color-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: cornflowerblue;
+  transform: scaleX(0);
+  z-index: -1;
+  /* transform-origin: left; */
+  transition: 0.3s transform ease;
+}
+
+.btn-color-slide:hover::before {
+  transform: scaleX(1);
+}
+
+.btn-color-slide {
+  transition: 0.4s color ease;
+  z-index: 2;
+}
+
+.btn-color-slide:hover {
+  color: white;
+}
+
+.btn-pop {
+  border-radius: 15px;
+  box-shadow: 0 9px #eee;
+}
+
+.btn-pop:hover {
+  background-color: #e459fe;
+}
+
+.btn-pop:active {
+  background-color: #e459fe;
+  transform: translateY(4px);
+  box-shadow: 0 5px #666666;
+}
